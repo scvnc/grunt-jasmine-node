@@ -33,9 +33,9 @@ module.exports = function (grunt) {
       var data = this.data;
       //merge options onto data, with data taking precedence
       data = _.extend(options, data);
-
-      if (data.projectRoot) {
-        data.specFolders.push(data.projectRoot);
+        
+      if (data.projectRoot && data.specFolders < 1) {
+            data.specFolders.push(data.projectRoot);
       }
 
       var junitreport = {
